@@ -1,0 +1,30 @@
+(x - ob_fixed[0])*V2_norm[0] + (y - ob_fixed[1])*V2_norm[1] + (z - ob_fixed[2])*V2_norm[2] == 0
+
+
+
+
+(op_new[0] - x)**2 + (op_new[1] - y)**2 + (op_new[2] - z)**2 == l_rod**2
+(x - ob_fixed[0])*(x - ob_fixed[0]) + (y - ob_fixed[1])*(y - ob_fixed[1]) + (z - ob_fixed[2])*(z - ob_fixed[2]) == l_cr*l_cr
+(x - ob_fixed[0])*V2_norm[0] + (y - ob_fixed[1])*V2_norm[1] + (z - ob_fixed[2])*V2_norm[2] == 0
+
+
+
+array([ 579.55549577, -155.29142706,    0.        ])
+
+
+
+
+from sympy.physics.vector import *
+
+
+a = ob_fixed[0,:]
+
+b = invkinsol[0,:]
+
+c = op_new[0,:]
+
+d = b - a
+
+e = c - b
+
+V_ang(d,e)            	
