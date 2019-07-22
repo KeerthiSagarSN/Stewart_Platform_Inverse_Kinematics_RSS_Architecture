@@ -20,7 +20,7 @@
  # Input 
  
  1. Line 771 in "stewartplatforminverse_8_Baseframe.py" consists of the input array in the form of list.
- Ex. point_gen = [[0,0,0,0,0,350],[0,0,0,0,150,350]], where [yaw,pitch,roll,surge,sway,heave] in absolute position to the base frame/Origin.
+ Ex. point_gen = [[0,0,0,0,0,350],[0,0,0,0,0,450]], where [yaw,pitch,roll,surge,sway,heave] in absolute position to the base frame/Origin refers to the platform heave of "100" mm .
  
  # Output
  
