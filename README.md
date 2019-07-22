@@ -17,4 +17,35 @@
  3. Execute "stewartplatforminverse_8_Baseframe.py" for obtaining visual representation of the link length and angle.
  4. Code runs slow because symbolic computations (Sympy) were used for fast prototyping. 
  
+ # Input 
+ 
+ 1. Line 771 in "stewartplatforminverse_8_Baseframe.py" consists of the input array in the form of list.
+ Ex. point_gen = [[0,0,0,0,0,350],[0,0,0,0,150,350]], where [yaw,pitch,roll,surge,sway,heave] in absolute position to the base frame/Origin.
+ 
+ # Output
+ 
+ 1. Heave - 100 mm 
+ 
+ ![alt text](http://url/to/img.png)
+ 
+ 2. Sway - 100 mm
+ 
+ ![alt text](http://url/to/img.png)
+ 
+ 3. Surge - 100 mm
+ 
+ ![alt text](http://url/to/img.png)
+ 
+ 4. Roll - 5 degrees
+ 
+ ![alt text](http://url/to/img.png)
+ 
+ 5. Pitch - 5 degrees
+ 
+ ![alt text](http://url/to/img.png)
+ 
+ 6. Yaw - 5 degrees
+ 
+ ![alt text](http://url/to/img.png)
+ 
  
