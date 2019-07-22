@@ -26,26 +26,35 @@
  
  1. Heave - 100 mm 
  
- ![alt text](http://url/to/img.png)
+ ![alt text](https://github.com/KeerthiSagarSN/Inverse_Kinematics_StewartPlatform_RSS/blob/master/heave_100mm.png)
  
  2. Sway - 100 mm
  
- ![alt text](http://url/to/img.png)
+ ![alt text](https://github.com/KeerthiSagarSN/Inverse_Kinematics_StewartPlatform_RSS/blob/master/sway_100mm_img1.png)
  
+ ![alt text](https://github.com/KeerthiSagarSN/Inverse_Kinematics_StewartPlatform_RSS/blob/master/sway_100mm_img2.png)
  3. Surge - 100 mm
  
- ![alt text](http://url/to/img.png)
+  ![alt text](https://github.com/KeerthiSagarSN/Inverse_Kinematics_StewartPlatform_RSS/blob/master/surge_100mm_img1.png)
+ 
+ ![alt text](https://github.com/KeerthiSagarSN/Inverse_Kinematics_StewartPlatform_RSS/blob/master/surge_100mm_img2.png)
  
  4. Roll - 5 degrees
  
- ![alt text](http://url/to/img.png)
+ ![alt text](https://github.com/KeerthiSagarSN/Inverse_Kinematics_StewartPlatform_RSS/blob/master/Roll_5deg_img1.png)
+ 
+ ![alt text](https://github.com/KeerthiSagarSN/Inverse_Kinematics_StewartPlatform_RSS/blob/master/Roll_5deg_img2.png)
  
  5. Pitch - 5 degrees
  
- ![alt text](http://url/to/img.png)
+ ![alt text](https://github.com/KeerthiSagarSN/Inverse_Kinematics_StewartPlatform_RSS/blob/master/Pitch_5deg_img1.png)
+ 
+ ![alt text](https://github.com/KeerthiSagarSN/Inverse_Kinematics_StewartPlatform_RSS/blob/master/Pitch_5deg_img2.png)
  
  6. Yaw - 5 degrees
  
- ![alt text](http://url/to/img.png)
+ ![alt text](https://github.com/KeerthiSagarSN/Inverse_Kinematics_StewartPlatform_RSS/blob/master/Yaw_5deg_img1.png)
+ 
+ ![alt text](https://github.com/KeerthiSagarSN/Inverse_Kinematics_StewartPlatform_RSS/blob/master/Yaw_5deg_img2.png)
  
  
