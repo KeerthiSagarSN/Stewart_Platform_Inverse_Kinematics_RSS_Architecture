@@ -2,8 +2,13 @@
 """
 Created on Mon Apr 24 11:50:18 2017
 
+Main planner for Stewart platform (RSS - Revolute - SPherical- Spherical) architecture
+
+
 @author: Keerthi
 """
+
+############## Library #######################################
 import numpy as np
 import matplotlib.pyplot as plt
 import os
@@ -53,6 +58,17 @@ from math import pi as Pi
 
 plt.ion()
 # Base points declaration as points in base coordinate system
+
+
+
+################################# Input data ##########################################################
+# 
+point_gen = [[0,0,0,0,0,350],[0,0,0,0,0,400]] # [Yaw,pitch,roll,surge,sway,heave] - Each array represents one pose
+
+
+
+
+
 ob = np.zeros(shape = [3,1])
 
 ob_s_a = np.zeros(shape= [3,1])
@@ -410,6 +426,7 @@ yawangle = [0,0,0,0,0]
 
 
 # Using sympy solver - Works best among scipy and other methods
+#################### SOLVER CLASS #########################
 class Solver(object):
     # Simultaneous equation solver
     
@@ -541,7 +558,7 @@ l_rod = 450
 invkin = Solver() # Solver class object
 
 
-point_gen = [[0,0,0,0,0,350],[0,0,0,0,0,400]]
+
 angle_crank = [-100,-100,-100,-100,-100,-100]
 
 ob_fixed_axis = np.array([-1,-1,-1])
