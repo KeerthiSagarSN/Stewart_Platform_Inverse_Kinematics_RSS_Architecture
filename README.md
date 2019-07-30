@@ -12,14 +12,14 @@
  
  # Instructions
  
- 1. Main planner file is stewartplatforminverse_8_Baseframe
+ 1. Main planner file is stewartplatforminverse_planner.py
  2. All geometrical parameters are hardcoded, but most important parameters are commented accordingly
- 3. Execute "stewartplatforminverse_8_Baseframe.py" for obtaining visual representation of the link length and angle.
+ 3. Execute "stewartplatforminverse_planner.py" for obtaining visual representation of the link length and angle.
  4. Code runs slow because symbolic computations (Sympy) were used for fast prototyping. 
  
  # Input 
  
- 1. Line 771 in "stewartplatforminverse_8_Baseframe.py" consists of the input array in the form of list.
+ 1. Line 66 in "stewartplatforminverse_planner.py" consists of the input array in the form of list.
  Ex. point_gen = [[0,0,0,0,0,350],[0,0,0,0,0,450]], where [yaw,pitch,roll,surge,sway,heave] in absolute position to the base frame/Origin refers to the platform heave of "100" mm .
  
  # Output
