@@ -24,6 +24,10 @@
  
  # Output
  
+ 1. Simulation
+ 
+  ![alt text](https://github.com/KeerthiSagarSN/Inverse_Kinematics_StewartPlatform_RSS/blob/master/stewart_simulation.gif)
+ 
  1. Heave - 100 mm 
  
  ![alt text](https://github.com/KeerthiSagarSN/Inverse_Kinematics_StewartPlatform_RSS/blob/master/heave_100mm.png)
