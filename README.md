@@ -1,4 +1,4 @@
-# Inverse_Kinematics_StewartPlatform_RSS
+# Stewart_Platform_Inverse_Kinematics_RSS_Architecture
  Inverse Kinematics Planner for 6 DOF Stewart Platform with Rotary actuators
  
  A 6 DOF gaming rig required a Stewart plaform architecture to achieve all ranges of motion - Roll, pitch, yaw, heave, surge and sway.
