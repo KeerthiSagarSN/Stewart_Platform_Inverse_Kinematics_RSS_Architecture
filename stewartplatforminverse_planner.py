@@ -43,7 +43,6 @@ import sympy
 
 
 
-
 from linearalgebra import *
 
 # Import the visualization library
@@ -63,7 +62,9 @@ plt.ion()
 
 ################################# Input data ##########################################################
 # 
-point_gen = [[0,0,0,0,0,350],[0,0,0,0,0,400]] # [Yaw,pitch,roll,surge,sway,heave] - Each array represents one pose
+point_gen = [[0,0,0,0,0,350],[0,0,0,0,0,400],[0,0,0,0,0,350],[0,0,0,0,0,300],[0,0,0,0,0,350],[0,0,0,0,100,350],[0,0,0,0,-100,350]
+,[0,0,0,100,0,350],[0,0,0,-100,0,350],[0,0,0,0,0,350],[5,0,0,0,0,350],[-5,0,0,0,0,350],[0,0,0,0,0,350],
+[0,5,0,0,100,350],[0,-5,0,0,0,350],[0,0,0,0,0,350],[0,0,5,0,0,350],[0,0,-5,0,0,350],[0,0,0,0,0,350]] # [Yaw,pitch,roll,surge,sway,heave] - Each array represents one pose
 
 
 
@@ -297,32 +298,48 @@ for i in xrange(3):
 # Rotation is along X - Roll axis, Rotation along Y - Pitch axis, Rotation along Z - yaw axis
 
 
+def plot_visual(ob_even,ob_odd,op_even,op_odd,oc_first,oc_per,oc_first_axis,op,ob,op_home,ob_fixed):
+    
+    fig = plt.figure()
+    ax = fig.add_subplot(111, projection='3d')
+    
+    ax.set_xlim(-600,600)
+    ax.set_ylim(-600,600)
+    ax.set_zlim(-100,600)
+    
+    ax.set_xlabel('X (mm)')
+    ax.set_ylabel('Y (mm)')
+    ax.set_zlabel('Z (mm)')
+    ax.set_aspect('equal')
+    ax.patch.set_facecolor("white")
+    
 
-
-fig = plt.figure()
-ax = fig.add_subplot(111, projection='3d')
-
-
-for k in xrange(len(ob_even)):
-    ax.scatter(ob_even[0,k],ob_even[1,k],ob_even[2,k],color = 'c')
-    ax.scatter(op_even[0,k],op_even[1,k],op_even[2,k],color = 'c')
+    ax.plot(op_home_plt[:,0],op_home_plt[:,1],op_home_plt[:,2],'.r-')
+    ax.plot(ob_fixed_plt[:,0],ob_fixed_plt[:,1],ob_fixed_plt[:,2],'.k-')
     
     
-    #ax.scatter(p_even_b[0,k],p_even_b[1,k],p_even_b[2,k],color = 'c')
+    for k in xrange(len(ob_even)):
+        ax.scatter(ob_even[0,k],ob_even[1,k],ob_even[2,k],color = 'c')
+        ax.scatter(op_even[0,k],op_even[1,k],op_even[2,k],color = 'c')
+        
+        
+        #ax.scatter(p_even_b[0,k],p_even_b[1,k],p_even_b[2,k],color = 'c')
+        
+    for k in xrange(len(ob_odd)):
+        ax.scatter(ob_odd[0,k],ob_odd[1,k],ob_odd[2,k],color = 'r')
+        ax.scatter(op_odd[0,k],op_odd[1,k],op_odd[2,k],color = 'r')
+        #ax.scatter(p_odd_b[0,k],p_odd_b[1,k],p_odd_b[2,k],color = 'r')
     
-for k in xrange(len(ob_odd)):
-    ax.scatter(ob_odd[0,k],ob_odd[1,k],ob_odd[2,k],color = 'r')
-    ax.scatter(op_odd[0,k],op_odd[1,k],op_odd[2,k],color = 'r')
-    #ax.scatter(p_odd_b[0,k],p_odd_b[1,k],p_odd_b[2,k],color = 'r')
+    for k in xrange(6):
+        ax.scatter(oc_first[k,0],oc_first[k,1],oc_first[k,2],color = 'cyan')
+        
+        ax.scatter(oc_first_axis[k,0],oc_first_axis[k,1],oc_first_axis[k,2],color = 'y')
+        ax.scatter(oc_per[k,0],oc_per[k,1],oc_per[k,2],color = 'y')
 
-for k in xrange(6):
-    ax.scatter(oc_first[k,0],oc_first[k,1],oc_first[k,2],color = 'cyan')
+    ax.scatter(op[0,0],op[1,0],op[2,0],color = 'b')
+    ax.scatter(ob[0,0],ob[1,0],ob[2,0],color = 'b')
     
-    ax.scatter(oc_first_axis[k,0],oc_first_axis[k,1],oc_first_axis[k,2],color = 'y')
-    ax.scatter(oc_per[k,0],oc_per[k,1],oc_per[k,2],color = 'y')
-
-ax.scatter(op[0,0],op[1,0],op[2,0],color = 'b')
-ax.scatter(ob[0,0],ob[1,0],ob[2,0],color = 'b')
+    return ax,fig
 
 
 
@@ -407,10 +424,7 @@ def New_position(angle_yaw_pitch_roll_x_y_z,ob_fixed):
 def lineplot(plt_arr):
     plt.plot(plt_arr[:,0],plt_arr[:,1],plt_arr[:,2],'.g-')
 
-op_home_plt = plotarray(op_home)
-ob_fixed_plt = plotarray(ob_fixed)
-plt.plot(op_home_plt[:,0],op_home_plt[:,1],op_home_plt[:,2],'.r-')
-plt.plot(ob_fixed_plt[:,0],ob_fixed_plt[:,1],ob_fixed_plt[:,2],'.k-')
+
 
 rollangle = [0,0,0,0,0]
 pitchangle = [0,0,0,0,0]
@@ -570,7 +584,15 @@ for p in xrange(6):
 ob_fixed_axis_1 = ob_fixed_axis[1:,:]
 
 ob_fixed_axis = np.array([[573.85,0,0],[573.85,0,0],[-286.925,496.96867796,0],[-286.925,496.96867796,0],[-286.925,-496.96867796,0],[-286.925,-496.96867796,0]])
+
+op_home_plt = plotarray(op_home)
+ob_fixed_plt = plotarray(ob_fixed)
+
+### Plotting happens here #################
 for i in  xrange(len(point_gen)):
+    
+    ax,fig = plot_visual(ob_even,ob_odd,op_even,op_odd,oc_first,oc_per,oc_first_axis,op,ob,op_home,ob_fixed)
+    
     
     [op_new,op_c] = New_position(point_gen[i],op_home)
     op_new_plt = plotarray(op_new)
@@ -603,7 +625,8 @@ for i in  xrange(len(point_gen)):
         invkin.plotlines(ob_fixed,op_new,invkinsol,ax)
         
         plt.pause(0.01)
-    #plt.pause(1)
+        fig.savefig('stewart_'+str(i)+'_'+'.png')
+        # Saving as gif 
 angle_crank = angle_crank[1:,:]
     
 
